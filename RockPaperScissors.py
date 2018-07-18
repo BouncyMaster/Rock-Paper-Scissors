@@ -7,11 +7,10 @@ if isfile("./data") == True:
 	with open('data', 'r') as f:
 		data = literal_eval(f.read())
 else:
-	data = {'wins': 0, 'loses': 0, 'draws': 0, 'plays': 0}
+	data = {'wins': 0, 'loses': 0, 'draws': 0}
 	with open("data", "w+") as f:
-		f.write("{'wins': 0, 'loses': 0, 'draws': 0, 'plays': 0}")
+		f.write("{'wins': 0, 'loses': 0, 'draws': 0}")
 
-# Player's Choice
 def pinput():
 	while True:
 		global player
@@ -30,8 +29,7 @@ def pinput():
 			break
 		else:
 			print("Error: Incorrect Input")
-		
-# Computer's Choice
+
 def cinput():
 	global computer
 	computer = randint(1, 3)
@@ -42,7 +40,6 @@ def cinput():
 	else:
 		print("Computer has chosen Scissors")
 
-#  Determining the win
 def determ():
 	if player == computer:
 		print("It's a draw!")
@@ -66,9 +63,7 @@ def determ():
 		print("You have won!")
 		data["wins"] += 1
 
-#Showing the total wins, loses and draws		
 def totinf():
-	data["plays"] += 1
 	print('''
 	=========================
 	You have %d total wins
@@ -77,8 +72,8 @@ def totinf():
 	
 	You have played %d times
 	=========================
-	''' % (data["wins"], data["loses"], data["draws"], data["plays"]))
-		
+	''' % (data["wins"], data["loses"], data["draws"], data["wins"] + data["loses"] + data["draws"]))
+
 def plagain():
 	while True:
 		again = input("Type 'Yes' or 'No' if you either want to play again or close the program or\n'Reset' to reset your score and close the program:").lower()
@@ -94,7 +89,7 @@ def plagain():
 			break
 		elif again == "reset" or again == "r":
 			with open("data", "w+") as f:
-				f.write("{'wins': 0, 'loses': 0, 'draws': 0, 'plays': 0}")
+				f.write("{'wins': 0, 'loses': 0, 'draws': 0}")
 			print("Score Reseted Successfully!")
 			sleep(1)
 			break
