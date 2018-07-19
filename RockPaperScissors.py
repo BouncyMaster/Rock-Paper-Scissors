@@ -5,7 +5,7 @@ from os.path import isfile
 
 if isfile("./data") == True:
 	with open('data', 'r') as f:
-		data = literal_eval(f.read()) #wries to data as list, not string
+		data = literal_eval(f.read()) #writes to data as list, not string
 else:
 	data = {'wins': 0, 'loses': 0, 'draws': 0}
 	with open("data", "w+") as f:
