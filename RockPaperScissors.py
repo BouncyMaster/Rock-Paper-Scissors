@@ -62,6 +62,8 @@ def determ():
 	if player == 3 and computer == 2:
 		print("You have won!")
 		data["wins"] += 1
+	with open("data", "w+") as f:
+		f.write(str(data))
 
 def totinf():
 	print('''
@@ -84,8 +86,6 @@ def plagain():
 			determ()
 			totinf()
 		elif again == "no" or again == "n":
-			with open("data", "w+") as f:
-				f.write(str(data))
 			break
 		elif again == "reset" or again == "r":
 			with open("data", "w+") as f:
