@@ -43,22 +43,22 @@ def main():
     if player == computer:
         print("It's a draw!")
         data["draws"] += 1
-    if player == 1 and computer == 2:
+    elif player == 1 and computer == 2:
         print("Computer has won!")
         data["loses"] += 1
-    if player == 1 and computer == 3:
+    elif player == 1 and computer == 3:
         print("You have won!")
         data["wins"] += 1
-    if player == 2 and computer == 1:
+    elif player == 2 and computer == 1:
         print("You have won!")
         data["wins"] += 1
-    if player == 3 and computer == 1:
+    elif player == 2 and computer == 3:
         print("Computer has won!")
         data["loses"] += 1
-    if player == 2 and computer == 3:
+    elif player == 3 and computer == 1:
         print("Computer has won!")
         data["loses"] += 1
-    if player == 3 and computer == 2:
+    elif player == 3 and computer == 2:
         print("You have won!")
         data["wins"] += 1
     with open("data", "w+") as f:
