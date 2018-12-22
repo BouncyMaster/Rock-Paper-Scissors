@@ -73,7 +73,7 @@ You have %d total draws
 You have played %d times
 =========================
 ''' % (data["wins"], data["loses"], data["draws"],
-        data["wins"] + data["loses"] + data["draws"]))
+       data["wins"] + data["loses"] + data["draws"]))
 
 
 def plagain():
