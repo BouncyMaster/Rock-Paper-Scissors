@@ -95,7 +95,7 @@ def plagain():
             print("Error:Incorrect Input")
 
 
-print("'Rock, Paper, Scissors' game by BouncyMaster")
 if __name__ == "__main__":
+    print("'Rock, Paper, Scissors' game by BouncyMaster")
     main()
     plagain()
